@@ -38,9 +38,4 @@ build_zenoh_pico()
 ament_export_libraries(zenoh-pico)
 ament_export_dependencies(zenoh-pico)
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  ament_lint_auto_find_test_dependencies()
-endif()
-
 ament_package(CONFIG_EXTRAS zenoh-pico_vendor-extras.cmake)
