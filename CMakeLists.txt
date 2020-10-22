@@ -29,7 +29,6 @@ macro(build_zenoh_pico)
       ${CMAKE_CURRENT_BINARY_DIR}/zenoh-pico_install/
     DESTINATION
       ${CMAKE_INSTALL_PREFIX}
-    PATTERN config.h EXCLUDE
   )
 endmacro()
 
