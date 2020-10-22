@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 
-project(zenoh-pico_vendor)
+project(zenoh_pico_vendor)
 
 find_package(ament_cmake REQUIRED)
 
@@ -35,7 +35,7 @@ endmacro()
 
 build_zenoh_pico()
 
-ament_export_libraries(zenoh-pico)
-ament_export_dependencies(zenoh-pico)
+ament_export_libraries(zenoh_pico)
+ament_export_dependencies(zenoh_pico)
 
-ament_package(CONFIG_EXTRAS zenoh-pico_vendor-extras.cmake)
+ament_package(CONFIG_EXTRAS zenoh_pico_vendor-extras.cmake)

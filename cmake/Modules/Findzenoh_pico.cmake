@@ -14,7 +14,7 @@
 
 ###################################################################################################
 #
-# CMake script for finding zenoh-pico
+# CMake script for finding zenoh_pico
 #
 # Input variables:
 #

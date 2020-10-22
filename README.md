@@ -1,2 +1,2 @@
-# zenoh-pico_vendor
- CMake wrapper downloading and building zenoh-pico
+# zenoh_pico_vendor
+ CMake wrapper downloading and building zenoh_pico
