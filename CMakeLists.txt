@@ -35,7 +35,9 @@ endmacro()
 
 build_zenoh_pico()
 
-ament_export_libraries(zenoh_pico)
+install(DIRECTORY cmake DESTINATION share/${PROJECT_NAME})
+
+ament_export_libraries(zenohc)
 ament_export_dependencies(zenoh_pico)
 
 ament_package(CONFIG_EXTRAS zenoh_pico_vendor-extras.cmake)
