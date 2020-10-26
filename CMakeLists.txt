@@ -13,9 +13,9 @@ macro(build_zenoh_pico)
   endif()
 
   include(ExternalProject)
-  externalproject_add(zenoh-pico-46984a45e28cd970aecece1e9e1117416a8625bc
+  externalproject_add(zenoh-pico-fb6e5b855da4cdc303df6be03648d64cb06c2cdf
     GIT_REPOSITORY https://github.com/eclipse-zenoh/zenoh-pico.git
-    GIT_TAG 46984a45e28cd970aecece1e9e1117416a8625bc
+    GIT_TAG fb6e5b855da4cdc303df6be03648d64cb06c2cdf
     GIT_SHALLOW ON
     TIMEOUT 60
     CMAKE_ARGS
