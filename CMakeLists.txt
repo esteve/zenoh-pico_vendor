@@ -4,6 +4,7 @@ project(zenoh_pico_vendor)
 
 find_package(ament_cmake REQUIRED)
 
+set(ZENOH_PICO_REV "fb6e5b855da4cdc303df6be03648d64cb06c2cdf")
 macro(build_zenoh_pico)
   set(extra_cmake_args)
 
@@ -13,9 +14,9 @@ macro(build_zenoh_pico)
   endif()
 
   include(ExternalProject)
-  externalproject_add(zenoh-pico-fb6e5b855da4cdc303df6be03648d64cb06c2cdf
+  externalproject_add(zenoh-pico-${ZENOH_PICO_REV}
     GIT_REPOSITORY https://github.com/eclipse-zenoh/zenoh-pico.git
-    GIT_TAG fb6e5b855da4cdc303df6be03648d64cb06c2cdf
+    GIT_TAG ${ZENOH_PICO_REV}
     GIT_SHALLOW ON
     TIMEOUT 60
     CMAKE_ARGS
@@ -35,8 +36,5 @@ endmacro()
 build_zenoh_pico()
 
 install(DIRECTORY cmake DESTINATION share/${PROJECT_NAME})
-
-ament_export_libraries(zenohc)
-ament_export_dependencies(zenoh_pico)
 
 ament_package(CONFIG_EXTRAS zenoh_pico_vendor-extras.cmake)
