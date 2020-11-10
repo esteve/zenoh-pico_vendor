@@ -4,7 +4,7 @@ project(zenoh_pico_vendor)
 
 find_package(ament_cmake REQUIRED)
 
-set(ZENOH_PICO_REV "fb6e5b855da4cdc303df6be03648d64cb06c2cdf")
+set(ZENOH_PICO_REV "89ba466b44bb87968545587b2abc12c3618f7aea")
 macro(build_zenoh_pico)
   set(extra_cmake_args)
 
