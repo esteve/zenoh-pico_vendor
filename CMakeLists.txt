@@ -4,7 +4,7 @@ project(zenoh_pico_vendor)
 
 find_package(ament_cmake REQUIRED)
 
-set(ZENOH_PICO_REV "7433a72f84ac9919de8681c347b12710a64d1454")
+set(ZENOH_PICO_REV "7545f07a657346198e916132a4fd684f19eadc94")
 macro(build_zenoh_pico)
   set(extra_cmake_args)
 
@@ -15,7 +15,7 @@ macro(build_zenoh_pico)
 
   include(ExternalProject)
   externalproject_add(zenoh-pico-${ZENOH_PICO_REV}
-    GIT_REPOSITORY https://github.com/esteve/zenoh-pico.git
+    GIT_REPOSITORY https://github.com/eclipse-zenoh/zenoh-pico.git
     GIT_TAG ${ZENOH_PICO_REV}
     GIT_SHALLOW ON
     TIMEOUT 60
