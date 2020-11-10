@@ -7,24 +7,31 @@ on:
     branches: [ main ]
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
   build:
-    # The CMake configure and build commands are platform agnostic and should work equally
-    # well on Windows or Mac.  You can convert this to a matrix build if you need
-    # cross-platform coverage.
-    # See: https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#configuring-a-build-matrix
     runs-on: ubuntu-latest
-
     container: ros:foxy
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Check out repo
+      uses: actions/checkout@v2
+
+    - name: Install missing dependencies
+      run: |
+        sudo apt update
+        rosdep update
+        DEBIAN_FRONTEND=noninteractive rosdep install --from-paths . --ignore-src --rosdistro foxy -y
 
     - name: Build
-      run: . /opt/ros/foxy/setup.sh && colcon build
+      run: |
+        . /opt/ros/foxy/setup.sh
+        colcon build --event-handlers console_cohesion+
 
-    - name: Test
-      run: . /opt/ros/foxy/setup.sh && colcon test
+    - name: Run tests
+      run: |
+        . /opt/ros/foxy/setup.sh
+        colcon test \
+          --event-handlers console_cohesion+ \
+          --return-code-on-test-failure
