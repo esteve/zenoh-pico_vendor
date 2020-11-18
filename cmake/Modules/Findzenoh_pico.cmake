@@ -70,7 +70,7 @@ else()
 endif()
 
 # Search for headers and the library
-find_path(zenoh_pico_INCLUDE_DIR NAMES "zenoh.h" ${zenoh_pico_INCLUDE_PATH})
+find_path(zenoh_pico_INCLUDE_DIR NAMES "zenoh-pico.h" ${zenoh_pico_INCLUDE_PATH})
 find_library(zenoh_pico_LIBRARY NAMES zenohc ${zenoh_pico_LIBRARY_PATH})
 
 mark_as_advanced(zenoh_pico_INCLUDE_DIR zenoh_pico_LIBRARY)
