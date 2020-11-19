@@ -17,7 +17,7 @@ macro(build_zenoh_pico)
   externalproject_add(zenoh-pico-${ZENOH_PICO_REV}
     GIT_REPOSITORY https://github.com/eclipse-zenoh/zenoh-pico.git
     GIT_TAG ${ZENOH_PICO_REV}
-    GIT_SHALLOW ON
+    GIT_SHALLOW OFF
     TIMEOUT 60
     CMAKE_ARGS
       -DCMAKE_INSTALL_PREFIX=${CMAKE_CURRENT_BINARY_DIR}/zenoh-pico_install
