@@ -4,8 +4,10 @@ project(zenoh_pico_vendor)
 
 find_package(ament_cmake REQUIRED)
 
-set(ZENOH_PICO_REV "034c57bfec721d7b51bd767d28d2ce02588ac35e")
+list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake/Modules")
+
 macro(build_zenoh_pico)
+  set(ZENOH_PICO_REV "034c57bfec721d7b51bd767d28d2ce02588ac35e")
   set(extra_cmake_args)
 
   get_property(multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
@@ -33,7 +35,11 @@ macro(build_zenoh_pico)
   )
 endmacro()
 
-build_zenoh_pico()
+find_package(zenoh_pico QUIET)
+
+if(NOT zenoh_pico_FOUND)
+  build_zenoh_pico()
+endif()
 
 install(DIRECTORY cmake DESTINATION share/${PROJECT_NAME})
 
