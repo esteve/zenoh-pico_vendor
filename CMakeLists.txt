@@ -5,7 +5,7 @@ project(zenoh_pico_vendor)
 find_package(ament_cmake REQUIRED)
 
 macro(build_zenoh_pico)
-  set(ZENOH_PICO_REV "35725c866edd5a010a4517107c8d16e16965fc05")
+  set(ZENOH_PICO_REV "0.5.0-beta.5")
   set(extra_cmake_args)
 
   get_property(multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
